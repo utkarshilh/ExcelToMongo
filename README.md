@@ -21,3 +21,33 @@ Make sure you have the following installed on your machine:
 ```bash
 git clone https://github.com/your-username/your-repository.git
 ```
+
+2. Navigate to the project directory.
+
+````bash
+cd your-repository
+
+3. Install dependencies for both frontend and backend.
+# Install frontend dependencies
+cd client
+npm install
+
+# Install backend dependencies
+cd ../server
+npm install
+
+
+
+4. Set up the MongoDB database.
+
+Make sure MongoDB is running on your machine.
+Create a .env file in the server directory and provide the MongoDB connection URL.
+
+```bash
+
+MONGODB_URI=your_mongodb_connection_url
+
+
+5. Running the Application
+
+````
