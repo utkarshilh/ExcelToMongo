@@ -24,13 +24,13 @@ git clone https://github.com/your-username/your-repository.git
 
 2. Navigate to the project directory.
 
-````bash
+```bash
 cd your-repository
 ```
 
 3. Install dependencies for both frontend and backend.
 # Install frontend dependencies
-````bash
+```bash
 cd client
 npm install
 ```
@@ -57,4 +57,4 @@ MONGODB_URI=your_mongodb_connection_url
 
 5. Running the Application
 
-````
+```
