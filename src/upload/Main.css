@@ -1,0 +1,40 @@
+/* Main.css */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text within the card */
+  }
+  
+  .label {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 1.5em; /* Adjust the font size to make it look like a heading */
+    font-weight: bold; /* Make it bold for emphasis */
+  }
+  
+  .file-input {
+    margin-bottom: 20px;
+  }
+  
+  .upload-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Add more styles as needed */
+  

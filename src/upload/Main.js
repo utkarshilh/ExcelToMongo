@@ -1,36 +1,72 @@
-// import React, { useState } from 'react';
-// import * as XLSX from 'xlsx';
 
-// function main() {
+
+// import React from 'react'
+// import { useState } from 'react';
+
+// export default function Main() {
+
+
 //     const [file, setFile] = useState(null);
-//     const [jsonData, setJsonData] = useState('');
+//     const [jsondata, setJsonData] = useState(null);
 
-//     handleConvert = () =>{
+//     const handleUpload = () => {
+//         console.log("hello how are");
 
 //     }
+
+
+
 //     return (
+
 //         <div>
-//             <input type="file" accept=".xls,.xlsx" onChange={e => setFile(e.target.files[0])} />
-//             <button onClick={handleConvert}>Convert</button>
-//             <pre>{jsonData}</pre>
+//             <label htmlFor="">Uplaod file </label>
+//             <input type="file" accept=".xls,xlsx," onChange={e => setFile(e.target.files[0])} />
+//             <br />
+//             <button onClick={handleUpload}>Upload</button>
+
+
+
 //         </div>
-//     );
+
+
+//     )
 // }
 
-// export default main
 
 
-import React from 'react'
+// Main.js
+import React from 'react';
 import { useState } from 'react';
+import './Main.css'; // Import the CSS file
 
 export default function Main() {
+    const [file, setFile] = useState(null);
+    const [jsondata, setJsonData] = useState(null);
+
+    const handleUpload = () => {
+
+        if (!file)
+            alert("no file selected");
+
+        else {
+
+        }
 
 
-    const [comments, setComments] = useState([]);
+    };
 
     return (
-        <div>
-            <input type="text" />
+        <div className="main-container">
+            <div className="card">
+                <label className="label" htmlFor="">
+                    Upload file
+                </label>
+                <input className="file-input" type="file" accept=".xls, .xlsx" onChange={(e) => setFile(e.target.files[0])} />
+                <br />
+                <button className="upload-button" onClick={handleUpload}>
+                    Upload
+                </button>
+            </div>
         </div>
-    )
+    );
 }
