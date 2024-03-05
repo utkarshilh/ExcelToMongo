@@ -97,19 +97,81 @@
 
 
 
+
+
+
+// var Express = require('express');
+// var cors = require("cors");
+// const multer = require("multer");
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+
+// var app = Express();
+// app.use(cors());
+
+// const uri = "mongodb+srv://bandassutkarsh030:mmpkQeZGB7XKjk5e@cluster0.xvu2ujx.mongodb.net/?retryWrites=true&w=majority";
+
+// // Your connection function
+// async function connectToDatabase() {
+//     const client = new MongoClient(uri, {
+//         serverApi: {
+//             version: ServerApiVersion.v1,
+//             strict: true,
+//             deprecationErrors: true,
+//         }
+//     });
+
+//     try {
+//         await client.connect();
+//         return client;
+//     } catch (error) {
+//         console.error('Error connecting to the database:', error);
+//         throw error;
+//     }
+// }
+
+// app.listen(5038, (req, res) => {
+//     console.log('Server is running on port 5038');
+// });
+
+// app.get('/', (req, res) => {
+//     res.send("hello hell");
+// });
+
+// app.get('/collectionDetails', async (req, res) => {
+//     let client;
+//     try {
+//         client = await connectToDatabase();
+//         const database = client.db("todoapp");
+//         const collection = database.collection("todocollection");
+//         const document = await collection.find({}).toArray();
+//         console.log(document);
+//         res.json({ document });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     } finally {
+//         if (client) {
+//             await client.close();
+//         }
+//     }
+// });
+
+
+
+
+// backend.js
 var Express = require('express');
 var cors = require("cors");
 const multer = require("multer");
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const config = require('./config'); // Import the configuration
 
 var app = Express();
 app.use(cors());
 
-const uri = "mongodb+srv://bandassutkarsh030:mmpkQeZGB7XKjk5e@cluster0.xvu2ujx.mongodb.net/?retryWrites=true&w=majority";
-
 // Your connection function
 async function connectToDatabase() {
-    const client = new MongoClient(uri, {
+    const client = new MongoClient(config.mongoURI, {
         serverApi: {
             version: ServerApiVersion.v1,
             strict: true,
