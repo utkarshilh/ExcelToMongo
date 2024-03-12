@@ -46,23 +46,31 @@ app.get('/collectionDetails', async (req, res) => {
     let client;
     try {
         client = await connectToDatabase();
+        console.log('Connected to the database');
+
         const database = client.db("todoapp");
         const collection = database.collection("todocollection");
-        const document = await collection.find({}).toArray();
-        console.log(document);
-        res.json({ document });
+
+        const documents = await collection.find({}).toArray();
+        console.log('Retrieved documents:', documents);
+
+        res.json({ documents });
     } catch (error) {
-        console.error(error);
+        console.error('Error in /collectionDetails:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     } finally {
         if (client) {
             await client.close();
+            console.log('Closed database connection');
         }
     }
 });
 
 app.post('/uploadData', async (req, res) => {
     const jsonData = req.body;
+
+    console.log(jsonData);
+
     let client;
     try {
         client = await connectToDatabase();
@@ -88,12 +96,4 @@ app.post('/uploadData', async (req, res) => {
 
 })
 
-app.post('/gggg', async (req, res) => {
 
-
-
-    console.log(req.body)
-    res.json({ success: true });
-
-
-});
