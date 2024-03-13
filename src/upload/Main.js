@@ -1,12 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import * as XLSX from 'xlsx';
 import './Main.css'; // Import the CSS file
 import axios from 'axios';
 
 export default function Main() {
+
+    const [isloading, setisLoading] = useState(false);
+
     const [file, setFile] = useState(null);
     const [jsonData, setJsonData] = useState(null);
+    const fileInputRef = useRef(null);
 
     const [dataToSend, setDataToSend] = useState('iuiuiuiuj');
 
@@ -36,9 +40,13 @@ export default function Main() {
                     });
 
                     if (response.ok) {
-                        console.log('Data sent successfully to the backend');
+                        alert("uploaded successfully");
+                        setFile(null); // Clear the file state
+                        fileInputRef.current.value = null;
+
                     } else {
                         console.log('Failed to send data to the backend');
+                        alert("something went wrong")
                     }
                 } catch (error) {
                     console.error('Error sending data to the backend:', error);
@@ -80,13 +88,13 @@ export default function Main() {
                     type="file"
                     accept=".xls, .xlsx"
                     onChange={(e) => setFile(e.target.files[0])}
+                    ref={fileInputRef}
                 />
                 <br />
                 <button className="upload-button" onClick={handleUpload}>
                     Upload
                 </button>
-                <button onClick={sendDataToBackend}>Hello</button>
-                <pre>{jsonData}</pre>
+
             </div>
         </div>
     );
