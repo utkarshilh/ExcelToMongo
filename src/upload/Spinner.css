@@ -1,0 +1,31 @@
+/* Spinner.css */
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .spinner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+    border-color: #ccc transparent #ccc transparent;
+    animation: spinner 1.2s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

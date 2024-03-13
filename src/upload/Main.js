@@ -4,9 +4,11 @@ import * as XLSX from 'xlsx';
 import './Main.css'; // Import the CSS file
 import axios from 'axios';
 
+import Spinner from './Spinner';
+
 export default function Main() {
 
-    const [isloading, setisLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const [file, setFile] = useState(null);
     const [jsonData, setJsonData] = useState(null);
@@ -18,6 +20,7 @@ export default function Main() {
         if (!file) {
             alert('No file selected');
         } else {
+            setLoading(true);
             const reader = new FileReader();
 
             reader.onload = async (e) => {
@@ -50,12 +53,15 @@ export default function Main() {
                     }
                 } catch (error) {
                     console.error('Error sending data to the backend:', error);
+                } finally {
+                    setLoading(false); // Reset loading state after response
                 }
             };
 
             try {
                 reader.readAsBinaryString(file);
             } catch (error) {
+                setLoading(false);
                 console.error('Error reading file:', error);
             }
         }
@@ -94,6 +100,9 @@ export default function Main() {
                 <button className="upload-button" onClick={handleUpload}>
                     Upload
                 </button>
+
+                {loading && <Spinner />} {/* Conditional rendering of Spinner */}
+
 
             </div>
         </div>
