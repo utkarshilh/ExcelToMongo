@@ -43,7 +43,7 @@ cd your-repository
 
 3. Install dependencies for both frontend and backend.
 
-# Install frontend dependencies
+### Install frontend dependencies
 
 ```bash
 cd client
@@ -73,4 +73,29 @@ MONGODB_URI=your_mongodb_connection_url
 ```
 npm start
 ```
+
+### Usage
+- Upload an Excel file using the provided input field.
+- Click the "Upload" button to store the data into the MongoDB database.
+- Check the response for success or error messages.
+
+### Backend API
+The backend API provides the following endpoints:
+- `GET /collectionDetails: Fetch all entries stored in the database.
+- `POST /uploadData: Upload JSON data to store in the database.
+
+### Screenshots
+
+### Contributing
+  Contributions are welcome! Please follow these steps:
+
+- Fork the repository
+- Create your feature branch (git checkout -b feature/YourFeature)
+- Commit your changes (git commit -am 'Add some feature')
+- Push to the branch (git push origin feature/YourFeature)
+- Create a new Pull Request
+
+
+
+
 
