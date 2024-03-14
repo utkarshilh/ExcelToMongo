@@ -85,6 +85,8 @@ The backend API provides the following endpoints:
 - `POST /uploadData: Upload JSON data to store in the database.
 
 ### Screenshots
+![Project Image](/public/mainPage.png)
+
 
 ### Contributing
   Contributions are welcome! Please follow these steps:
