@@ -1,10 +1,23 @@
-# React + Node.js + MongoDB CRUD Application
+# ExcelToMongo
+![Project Image](images/project_image.png)
+ExcelToMongo is a web application built with Node.js, React.js, and MongoDB that allows users to upload Excel files and store their data into a MongoDB database.
 
-This is a simple CRUD (Create, Read, Update, Delete) application built using React for the frontend, Node.js for the backend, and MongoDB for database storage. The application allows you to store and manage information such as name and email in a MongoDB database.
+## Features
+- Upload Excel files
+- Convert Excel data to JSON
+- Store JSON data in MongoDB
+- Backend endpoint for fetching stored data
+
+## Technologies Used
+
+- Node.js
+- React.js
+- MongoDB
 
 ## Getting Started
 
-Follow the steps below to set up and run the project locally.
+  Follow the steps below to set up and run the project locally.
+
 
 ### Prerequisites
 
@@ -19,7 +32,7 @@ Make sure you have the following installed on your machine:
 1. Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/utkarshilh/ExcelToMongo
 ```
 
 2. Navigate to the project directory.
@@ -58,6 +71,6 @@ MONGODB_URI=your_mongodb_connection_url
 5. Running the Application
 
 ```
-
+npm start
 ```
-# ExcelToMongo
+
