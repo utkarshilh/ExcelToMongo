@@ -1,5 +1,4 @@
 # ExcelToMongo
-![Project Image](images/project_image.png)
 ExcelToMongo is a web application built with Node.js, React.js, and MongoDB that allows users to upload Excel files and store their data into a MongoDB database.
 
 ## Features
