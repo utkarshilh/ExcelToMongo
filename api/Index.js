@@ -1,5 +1,4 @@
 
-
 // backend.js
 var Express = require('express');
 
@@ -68,8 +67,6 @@ app.get('/collectionDetails', async (req, res) => {
 
 app.post('/uploadData', async (req, res) => {
     const jsonData = req.body;
-
-    console.log(jsonData);
 
     let client;
     try {
